@@ -1,0 +1,49 @@
+
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Create app on Apple Developer and App Store Connect"
+  lane :create_app do
+    produce  
+  end
+
+desc "Sync certificates"
+  lane :sync_profiles do
+    match({readonly: true,type:"appstore"})
+  end
+
+desc "Create ipa"
+  lane :build do
+    sync_profiles
+
+    # Increases the build number by 1
+    increment_build_number
+
+    # Creates a signed file
+    gym
+
+  end
+desc "Upload to TestFlight"
+  lane :beta do
+    build
+    pilot  
+  end
+desc "Take screenshots"
+  lane :screenshot do
+    snapshot
+  end
+desc "Upload to App Store"
+  lane :upload do
+    deliver
+  end
+
+desc "Create app, screenshot ,build and upload"
+  lane :release_app do
+    create_app
+    build
+    screenshot	
+    deliver
+  end
+
+end

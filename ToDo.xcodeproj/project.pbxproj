@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		088D63B2267355E4004304A4 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D63B1267355E4004304A4 /* SnapshotHelper.swift */; };
 		089444AA26711C9300670297 /* ToDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089444A926711C9300670297 /* ToDoApp.swift */; };
 		089444AC26711C9300670297 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089444AB26711C9300670297 /* ContentView.swift */; };
 		089444AE26711C9700670297 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 089444AD26711C9700670297 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		088D63B1267355E4004304A4 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		089444A626711C9300670297 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		089444A926711C9300670297 /* ToDoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoApp.swift; sourceTree = "<group>"; };
 		089444AB26711C9300670297 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		089444C526711C9700670297 /* ToDoUITests */ = {
 			isa = PBXGroup;
 			children = (
+				088D63B1267355E4004304A4 /* SnapshotHelper.swift */,
 				089444C626711C9700670297 /* ToDoUITests.swift */,
 				089444C826711C9700670297 /* Info.plist */,
 			);
@@ -200,6 +203,7 @@
 					};
 					089444B626711C9700670297 = {
 						CreatedOnToolsVersion = 12.4;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 089444A526711C9300670297;
 					};
 					089444C126711C9700670297 = {
@@ -277,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				089444C726711C9700670297 /* ToDoUITests.swift in Sources */,
+				088D63B2267355E4004304A4 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,7 +422,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "\"ToDo/Preview Content\"";
 				DEVELOPMENT_TEAM = V92V5YJSDV;
 				ENABLE_PREVIEWS = YES;
@@ -427,10 +434,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.devplanet.ToDo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devplanet.todo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.devplanet.todo";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -439,7 +448,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "\"ToDo/Preview Content\"";
 				DEVELOPMENT_TEAM = V92V5YJSDV;
 				ENABLE_PREVIEWS = YES;
@@ -449,10 +460,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.devplanet.ToDo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devplanet.todo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.devplanet.todo";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -504,8 +517,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V92V5YJSDV;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ToDoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -514,6 +527,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.devplanet.ToDoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = ToDo;
@@ -524,8 +539,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V92V5YJSDV;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ToDoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -534,6 +549,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.devplanet.ToDoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = ToDo;

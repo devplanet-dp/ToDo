@@ -1,0 +1,16 @@
+# App scheme name
+scheme("ToDo")
+#provide provisioning profiles to use
+export_options({
+    method: "app-store",
+    provisioningProfiles: { 
+      "com.devplanet.todo" => "match AppStore com.devplanet.todo",
+
+          }
+})
+# specify the path to store .ipa file
+output_directory("./fastlane/builds")
+# Excludes bitcode from the build
+include_bitcode(false)
+# Excludes symbols from the build.
+include_symbols(false)

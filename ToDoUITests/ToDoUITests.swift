@@ -22,11 +22,22 @@ class ToDoUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+        func testExample() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
+            setupSnapshot(app)
         app.launch()
 
+            let plusButton = app.buttons["plus"]
+            snapshot("01Plus")
+            plusButton.tap()
+            
+            let addTodoTextField = app.textFields["Add todo..."]
+            addTodoTextField.tap()
+            snapshot("02ToDo")
+            plusButton.tap()
+            app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.tap()
+        
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

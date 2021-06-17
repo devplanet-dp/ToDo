@@ -1,0 +1,17 @@
+# indicating it’s a free app.
+price_tier(0)
+# Answer the questions Apple would present to you upon manually submitting for review
+submission_information({
+    export_compliance_encryption_updated: false,
+    export_compliance_uses_encryption: false,
+    content_rights_contains_third_party_content: false,
+    add_id_info_uses_idfa: false
+})
+# 3
+#app_rating_config_path("./fastlane/metadata/app_store_rating_config.json")
+# file location
+ipa("./fastlane/builds/ToDo.ipa”)
+# automatically submit the app for review(In my case false)
+submit_for_review(false)
+# 6
+automatic_release(false)
